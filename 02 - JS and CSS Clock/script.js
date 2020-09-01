@@ -4,6 +4,7 @@ const hourHand = document.querySelector('.hour-hand');
 
 function setDate(){
     const now = new Date();
+    
     const seconds = now.getSeconds();
     const minutes = now.getMinutes();
     const hours = now.getHours();
