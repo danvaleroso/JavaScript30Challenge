@@ -6,11 +6,13 @@ function handleCheck(e) {
 
     let inBetween = false;
 
-    if(e.shiftKey && this.checked){
+        //added lastChecked.checked to fix the bug
+        //it will look if the lastCheck is checked before checking all the in between checkboxes
+    if(e.shiftKey && this.checked && lastChecked.checked){
 
         checkboxes.forEach(checkbox => {
-
-            if (checkbox  === this || checkbox === lastChecked) {
+            
+            if ((checkbox  === this || checkbox === lastChecked) ) {
                 inBetween = !inBetween;
             }
 
@@ -20,6 +22,7 @@ function handleCheck(e) {
         });
 
     }
+
     lastChecked = this;
 }
 
